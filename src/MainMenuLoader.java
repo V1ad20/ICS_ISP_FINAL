@@ -15,6 +15,7 @@ import javafx.util.Duration;
 public class MainMenuLoader {
 
     boolean finished = false;
+    boolean goToInstruct = false;
 
     public Scene load() throws IOException {
         Parent companyRoot = FXMLLoader.load(getClass().getResource("resources/mainMenu.fxml"));
@@ -22,9 +23,16 @@ public class MainMenuLoader {
 
         Button newGame = (Button) companyScene.lookup("#new-game");
 
+        Button instructions = (Button) companyScene.lookup("#instructions");
+
         newGame.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
             finished = true;
         });
+
+        instructions.addEventHandler(MouseEvent.MOUSE_CLICKED, e ->{
+            goToInstruct = true;
+        });
+
         return companyScene;
     }
 }
