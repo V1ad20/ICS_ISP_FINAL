@@ -60,8 +60,10 @@ public class App extends Application {
                 }
 
                 if (dreamScene.sceneState == 10) {
-                    if (!houseScene.resumed)
+                    if (!houseScene.resumed) {
                         houseScene.player.gameCenter.set(4 * Cell.sideLength, 4 * Cell.sideLength);
+                        houseScene.player.canMove = true;
+                    }
                     houseScene.resumed = true;
                     currentScene = houseScene;
                 }
