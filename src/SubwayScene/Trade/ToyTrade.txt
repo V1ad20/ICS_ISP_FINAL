@@ -1,0 +1,13 @@
+Trader
+*
+Hello, do you by any chance have any food? I'll
+trade you for a teddy bear
+-
+Trader
+*
+Sorry, only a water bottle will do.  I really need one!
+-
+Trader
+*
+Oh my, thank you! It's so hot with all these people here,
+and it makes me so thirsty. Have your blanket young man!

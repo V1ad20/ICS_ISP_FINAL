@@ -1,0 +1,3 @@
+Person B
+*
+You should go that way
