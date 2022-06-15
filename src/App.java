@@ -11,19 +11,29 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class App extends Application {
+
     HouseScene houseScene;
     DreamScene dreamScene;
     SubwayScene subwayScene;
     TrainScene trainScene;
-    SplashscreenLoader splashscreenLoader = new SplashscreenLoader();
-    MainMenuLoader mainMenuLoader = new MainMenuLoader();
-    InstructionsLoader instructionsLoader = new InstructionsLoader();
-    UsernameInputLoader usernameLoader = new UsernameInputLoader();
+    SplashscreenLoader splashscreenLoader;
+    MainMenuLoader mainMenuLoader;
+    InstructionsLoader instructionsLoader;
+    UsernameInputLoader usernameLoader;
+
+    Scene splashscreen;
+    Scene mainMenu;
+    Scene instructionsMenu;
+    Scene usernameScene;
     Scene prevScene;
     Scene currentScene;
+
+    Timekeeper timekeeper;
+
     boolean canShowStage = false;
 
     String currentUsername = "";
+    String currentTime = "";
 
     public static void main(String[] args) throws Exception {
         launch(args);
@@ -34,13 +44,19 @@ public class App extends Application {
 
         prevScene = null;
 
-        Scene splashscreen = splashscreenLoader.load();
-        Scene mainMenu = mainMenuLoader.load();
-        Scene instructionsMenu = instructionsLoader.load();
+        splashscreenLoader = new SplashscreenLoader();
+        mainMenuLoader = new MainMenuLoader();
+        instructionsLoader = new InstructionsLoader();
+        usernameLoader = new UsernameInputLoader();
         houseScene = new HouseScene();
         dreamScene = new DreamScene();
         subwayScene = new SubwayScene();
         trainScene = new TrainScene();
+        splashscreen = splashscreenLoader.load();
+        mainMenu = mainMenuLoader.load();
+        instructionsMenu = instructionsLoader.load();
+        usernameScene = usernameLoader.load();
+        timekeeper = new Timekeeper();
 
         // splashscreenLoader.finished = true;
         // mainMenuLoader.finished = true;
@@ -67,6 +83,12 @@ public class App extends Application {
 
                 if (mainMenuLoader.finished) {
                     houseScene.started = true;
+                    currentScene = usernameScene;
+                }
+
+                if(usernameLoader.finished){
+                    currentUsername = usernameLoader.passedUsername;
+                    timekeeper.start();
                     currentScene = houseScene;
                 }
 
