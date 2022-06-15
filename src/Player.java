@@ -5,7 +5,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
 /**
- * The Player calss extends the ImageView class and is responsible for the player character
+ * The Player class extends the ImageView class and is responsible for the player character
  * 
  * @author Sean Yang
  * @author Vlad Surdu

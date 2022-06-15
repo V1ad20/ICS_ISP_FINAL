@@ -1,13 +1,9 @@
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
