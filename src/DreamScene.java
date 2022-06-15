@@ -15,6 +15,7 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
@@ -877,27 +878,29 @@ public class DreamScene extends Scene {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if (curIndex == textCache.size()) {
-                    speakerText.setVisible(false);
-                    text.setVisible(false);
-                    arrow.setVisible(false);
-                    keyEventActive = false;
-                    animationLocked = false;
-                    playText.stop();
-                    if (sceneState == 9) {
-                        sceneState = 10;
+                if (event.getCode() == KeyCode.SPACE) {
+                    if (curIndex == textCache.size()) {
+                        speakerText.setVisible(false);
+                        text.setVisible(false);
+                        arrow.setVisible(false);
+                        keyEventActive = false;
+                        animationLocked = false;
+                        playText.stop();
+                        if (sceneState == 9) {
+                            sceneState = 10;
+                        }
+                    } else if (keyEventActive) {
+                        if (disInt < currentString.length()) {
+                            disInt = currentString.length();
+                            text.setText(currentString);
+                        } else {
+                            disInt = 0;
+                        }
+                        currentString = textCache.get(curIndex);
+                        arrow.setVisible(false);
+                        keyEventActive = false;
+                        playText.start();
                     }
-                } else if (keyEventActive) {
-                    if (disInt < currentString.length()) {
-                        disInt = currentString.length();
-                        text.setText(currentString);
-                    } else {
-                        disInt = 0;
-                    }
-                    currentString = textCache.get(curIndex);
-                    arrow.setVisible(false);
-                    keyEventActive = false;
-                    playText.start();
                 }
             }
         });

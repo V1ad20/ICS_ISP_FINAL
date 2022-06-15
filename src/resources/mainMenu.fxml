@@ -9,23 +9,32 @@
    <children>
       <ImageView fitHeight="640.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" smooth="false">
          <image>
-            <Image url="@pixil-frame-0_6.png" />
+            <Image url="@pixil-frame-0_10.png" />
          </image>
       </ImageView>
-      <Button graphicTextGap="0.0" layoutX="95.0" layoutY="479.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="133.0" style="-fx-background-color: EMPTY;">
+      <Button id="new-game" graphicTextGap="0.0" layoutX="73.0" layoutY="272.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: EMPTY;">
          <graphic>
-            <ImageView fitHeight="59.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pixil-frame-0_5.png" />
+                  <Image url="@pixil-frame-0_12.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button id="new-game" graphicTextGap="0.0" layoutX="54.0" layoutY="270.0" mnemonicParsing="false" style="-fx-background-color: EMPTY;">
+      <Button id="instructions" layoutX="41.0" layoutY="359.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="223.0" style="-fx-background-color: EMPTY;">
          <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pixil-frame-0_4.png" />
+                  <Image url="@pixil-frame-0_11.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button graphicTextGap="0.0" layoutX="71.0" layoutY="521.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="163.0" style="-fx-background-color: EMPTY;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pixil-frame-0_14.png" />
                </image>
             </ImageView>
          </graphic>

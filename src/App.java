@@ -17,9 +17,13 @@ public class App extends Application {
     TrainScene trainScene;
     SplashscreenLoader splashscreenLoader = new SplashscreenLoader();
     MainMenuLoader mainMenuLoader = new MainMenuLoader();
+    InstructionsLoader instructionsLoader = new InstructionsLoader();
+    UsernameInputLoader usernameLoader = new UsernameInputLoader();
     Scene prevScene;
     Scene currentScene;
     boolean canShowStage = false;
+
+    String currentUsername = "";
 
     public static void main(String[] args) throws Exception {
         launch(args);
@@ -32,6 +36,7 @@ public class App extends Application {
 
         Scene splashscreen = splashscreenLoader.load();
         Scene mainMenu = mainMenuLoader.load();
+        Scene instructionsMenu = instructionsLoader.load();
         houseScene = new HouseScene();
         dreamScene = new DreamScene();
         subwayScene = new SubwayScene();
@@ -48,6 +53,16 @@ public class App extends Application {
             public void handle(long nanos) {
                 if (splashscreenLoader.finished) {
                     currentScene = mainMenu;
+                }
+
+                if (instructionsLoader.finished) {
+                    currentScene = mainMenu;
+                    instructionsLoader.finished = false;
+                    mainMenuLoader.goToInstruct = false;
+                }
+
+                if (mainMenuLoader.goToInstruct) {
+                    currentScene = instructionsMenu;
                 }
 
                 if (mainMenuLoader.finished) {
