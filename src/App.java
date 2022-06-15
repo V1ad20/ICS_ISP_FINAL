@@ -18,9 +18,12 @@ public class App extends Application {
     SplashscreenLoader splashscreenLoader = new SplashscreenLoader();
     MainMenuLoader mainMenuLoader = new MainMenuLoader();
     InstructionsLoader instructionsLoader = new InstructionsLoader();
+    UsernameInputLoader usernameLoader = new UsernameInputLoader();
     Scene prevScene;
     Scene currentScene;
     boolean canShowStage = false;
+
+    String currentUsername = "";
 
     public static void main(String[] args) throws Exception {
         launch(args);
