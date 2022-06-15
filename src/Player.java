@@ -4,6 +4,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
+/**
+ * The Player calss extends the ImageView class and is responsible for the player character
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 public class Player extends ImageView {
 
     // Scene derived variables
@@ -69,6 +79,10 @@ public class Player extends ImageView {
         // setFill(Color.RED);
     }
 
+    
+    /** 
+     * @param event
+     */
     private void setMotion(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
@@ -88,6 +102,10 @@ public class Player extends ImageView {
         }
     }
 
+    
+    /** 
+     * @param event
+     */
     private void cancelMotion(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
@@ -107,6 +125,10 @@ public class Player extends ImageView {
         }
     }
 
+    
+    /** 
+     * @param scene
+     */
     public void applyTo(Scene scene) {
         scene.addEventHandler(KeyEvent.KEY_PRESSED, e -> setMotion(e));
         scene.addEventHandler(KeyEvent.KEY_RELEASED, e -> cancelMotion(e));
@@ -133,6 +155,10 @@ public class Player extends ImageView {
         setTranslateY((sceneHeight - getFitHeight()) / 2 + gameCenter.y - refGameCenter.y);
     }
 
+    
+    /** 
+     * @param millis
+     */
     public void updateCostume(int millis) {
         currentTime = (int) Math.floor(0.01 * millis);
         if (canMove && (verticalMotion != 0 || horizontalMotion != 0)) {
@@ -235,11 +261,20 @@ public class Player extends ImageView {
         }
     }
 
+    
+    /** 
+     * @param c
+     * @return boolean
+     */
     private boolean intersectionOccursAt(Cell c) {
         return Math.abs(gameCenter.x - c.getGameCenterX()) < (getFitWidth() + c.getWidth()) / 2
                 && Math.abs(gameCenter.y - c.getGameCenterY()) < (getFitHeight() + c.getHeight()) / 2;
     }
 
+    
+    /** 
+     * @param c
+     */
     private void handleCollision(Cell c) {
         double angle = Math.atan2(prevGameCenter.y - c.getGameCenterY(), prevGameCenter.x - c.getGameCenterX());
 
@@ -254,6 +289,10 @@ public class Player extends ImageView {
         }
     }
 
+    
+    /** 
+     * @return Cell
+     */
     public Cell getCurrentCell() {
         return cellMap[((int) gameCenter.y)
                 / Cell.sideLength][((int) gameCenter.x) / Cell.sideLength];

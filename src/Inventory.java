@@ -1,8 +1,17 @@
-import java.io.IOException;
-
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+/**
+ * Inventory is used to hold the inventory of the player character
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 
 public class Inventory extends Group {
 
@@ -11,9 +20,12 @@ public class Inventory extends Group {
     private Image[] items;
     private Point center;
 
-    public boolean canShow = true;
+    public boolean canShow = true; //Checks whether or not the inventory should be shown
     public int inventoryIndex;
 
+    /**
+     * Constructor for the inventory class and extends the Group class
+     */
     public Inventory(double width, double height, int inventoryIndex, boolean isShowing) {
         super();
 
@@ -47,6 +59,9 @@ public class Inventory extends Group {
         getChildren().addAll(inventory, item);
     }
 
+    /**
+     * Updates the inventory items image
+     */
     public void updateItem() {
         item.setImage(items[inventoryIndex]);
     }

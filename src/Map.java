@@ -1,9 +1,16 @@
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
+/**
+ * The Map class extends the ImageView class and its purpose is to display the playable map
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 public class Map extends ImageView {
 
     private static Image[] maps = new Image[] {
@@ -13,9 +20,16 @@ public class Map extends ImageView {
             new Image("SubwayScene/Maps/Ukraine3.png"),
     };
 
-    public boolean canShow = true;
-    public int mapIndex;
+    public boolean canShow = true; //Checks if the map should be shown
+    public int mapIndex; //Holds the index for the map
 
+    /**
+     * Constructor for the map class
+     * @param width //Width of the map in pixels
+     * @param height //Height of the map in pixels
+     * @param mapIndex //Map Index
+     * @param isShowing //Checks if the map is showing
+     */
     public Map(double width, double height, int mapIndex, boolean isShowing) {
         super(maps[mapIndex]);
         this.mapIndex = mapIndex;
@@ -28,18 +42,10 @@ public class Map extends ImageView {
         setVisible(isShowing);
     }
 
+    /**
+     * Updates the map
+     */
     public void updateMap() {
         setImage(maps[mapIndex]);
     }
-
-    // public static void main(String[] args) {
-    // Group g = new Group();
-    // Map map = new Map(640, 640, 0, true);
-    // g.getChildren().add(map);
-    // Scene scene = new Scene(g, 640, 640);
-    // Stage stage = new Stage();
-    // stage.setScene(scene);
-    // stage.show();
-
-    // }
 }

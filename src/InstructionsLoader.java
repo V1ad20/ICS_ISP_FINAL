@@ -6,9 +6,26 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
-public class InstructionsLoader {
-    boolean finished = false;
+/**
+ * InstructionsLoader is the loader class for the InstructionsMenu
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 
+public class InstructionsLoader {
+    boolean finished = false; //Checks if the class has finished running
+
+
+    /**
+     * the load method loads the entire scene and all of its functionality
+     * @return returns the scene and all contained nodes
+     * @throws IOException
+     */
     public Scene load() throws IOException {
         Parent companyRoot = FXMLLoader.load(getClass().getResource("resources/instructionsMenu.fxml"));
         Scene scene = new Scene(companyRoot, 640, 640);

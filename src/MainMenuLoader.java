@@ -1,21 +1,24 @@
 import java.io.IOException;
-
-import javafx.animation.AnimationTimer;
-import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Arc;
-import javafx.util.Duration;
 
+/**
+ * The loader for the mainMenu. This class loads the functionality and graphics for the mainMenu
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 public class MainMenuLoader {
 
-    boolean finished = false;
-    boolean goToInstruct = false;
+    boolean finished = false; //Checks if the class has finished running (move onto the next scene)
+    boolean goToInstruct = false; //Checks if the class should go to the instructions
 
     public Scene load() throws IOException {
         Parent companyRoot = FXMLLoader.load(getClass().getResource("resources/mainMenu.fxml"));

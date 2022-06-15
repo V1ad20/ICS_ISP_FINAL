@@ -2,27 +2,35 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
+/**
+ * HouseScene is the class responsible for displaying and running the first scene
+ * of the game where Gleb is in his house. This class calls multiple other classes.
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+**/
 public class HouseScene extends Scene {
-    public Player player;
-    Cell[][] cellMap;
+    public Player player; //The player variable defines the object the user is controlling
+    Cell[][] cellMap; //The cellMap array splits the actual map into an array for processing
 
     public Image img1 = new Image("HouseScene/Appartment1.jpg");
     public Image img2 = new Image("HouseScene/Appartment2.jpg");
     public BackgroundImage background;
 
-    public boolean started;
-    public boolean paused;
-    public boolean resumed;
-    public boolean finished;
+    public boolean started; //Boolean to check for the scene start
+    public boolean paused; //Check if the scene is temporarily paused for scene 2
+    public boolean resumed; //Check when the scene is resumed
+    public boolean finished; //And boolean for when the scene is finished
 
     private static Group g = new Group();
-    private static final double WIDTH = 640;
-    private static final double HIEGHT = 640;
 
     public HouseScene() {
         super(g, 640, 640);
@@ -160,6 +168,12 @@ public class HouseScene extends Scene {
         timer2.start();
     }
 
+    /**
+     * Method to create the map per the cell array
+     * @param rows
+     * @param cols
+     * @return
+     */
     public Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];
         for (int row = 0; row < rows; row++) {

@@ -2,13 +2,11 @@ import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.GaussianBlur;
@@ -18,10 +16,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
 import javafx.scene.text.*;
 import javafx.scene.transform.Rotate;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
@@ -30,18 +26,36 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.geometry.Insets;
-
+/**
+ * DreamScene is the class that handles displaying the second part of the
+ * game where Gleb has his dream. The class is completely self contained
+ * and uses assets found in the 'resources' folder. It contains everything
+ * from the animation found in the dream scene to the text boxes, text box
+ * functionality and animation, and the questions functionality.
+ * 
+ * @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ */
 public class DreamScene extends Scene {
-    int checkTime;
-    int curTime;
-    int disInt;
-    int curIndex;
-    String currentString;
-    boolean keyEventActive;
-    boolean animationLocked;
-    int sceneState;
+    int checkTime; //This variable is the checkTime that the animationTimers use to check for passage of time
+    int curTime; //The current time of the specified animationTimer
+    int disInt; //This is a distance integer that is used to control the amount of a sentence to display
+    int curIndex; //The current index of the array that holds all the sentence fragmants
+    String currentString; //The current string that is being displayed
+    boolean keyEventActive; //Whether or not the space bar is able to be pressed in relation to text display
+    boolean animationLocked; //Set to true when text is being displayed, set to false when not - variable used to control events
+    int sceneState; //State machine used to determine what stage of scene2 the program is on
     private static Group root = new Group();
 
+    
+    /** This method controls the fade in animation of a node
+     * @param root the node that the animation is applied to
+     * @param time the amount of time in milliseconds the transition should take
+     */
     public void fadeIn(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -50,7 +64,11 @@ public class DreamScene extends Scene {
         ft.setToValue(1);
         ft.play();
     }
-
+    
+    /**
+     * constructor for the DreamScene
+     * @throws IOException handles IOException from FileReader
+     */
     public DreamScene() throws IOException {
         super(root, 640, 640);
         Timer timer = new Timer();
@@ -203,6 +221,12 @@ public class DreamScene extends Scene {
         part2Text.start();
     }
 
+    
+    /** 
+     * First set of questions to show to the user
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet1(Group root, Scene scene) {
 
         sceneState = 1;
@@ -284,6 +308,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Second set of questions to show the user
+     * @param root Root Group
+     * @param scene Current scene
+     */
     public void scene2QSet2(Group root, Scene scene) {
 
         sceneState = 2;
@@ -365,6 +395,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Third set of questions to show the user
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet3(Group root, Scene scene) {
 
         sceneState = 3;
@@ -446,6 +482,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Fourth set of questions to show the user
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet4(Group root, Scene scene) {
 
         sceneState = 4;
@@ -527,6 +569,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Fifth set of questions to show the user
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet5(Group root, Scene scene) {
 
         sceneState = 5;
@@ -608,6 +656,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Sixth set of questions to show the user
+     * @param root Root Group 
+     * @param scene Current Scene
+     */
     public void scene2QSet6(Group root, Scene scene) {
 
         sceneState = 6;
@@ -672,6 +726,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * Seventh set of questions to show the user
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet7(Group root, Scene scene) {
 
         sceneState = 7;
@@ -736,6 +796,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /**
+     * Eighth and final set of questions to show the user 
+     * @param root Root Group
+     * @param scene Current Scene
+     */
     public void scene2QSet8(Group root, Scene scene) {
 
         sceneState = 8;
@@ -800,6 +866,14 @@ public class DreamScene extends Scene {
         });
     }
 
+    
+    /** 
+     * TextTool method is the method used to display and animate the text shown to the user
+     * @param filepath the path of the file containing the text to be displayed
+     * @param root Root Group
+     * @param scene Current Scene
+     * @throws IOException handles exception from file reader
+     */
     public void textTool(String filepath, Group root, Scene scene) throws IOException {
 
         ArrayList<String> speakerCache = new ArrayList<String>();
