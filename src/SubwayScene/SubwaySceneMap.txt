@@ -125,3 +125,5 @@ PlayerBoundary:11 39
 
 Default:4 1 4 2:rect
 
+PlayerBoundary:0 0 11 0
+
