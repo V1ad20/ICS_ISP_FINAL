@@ -13,6 +13,7 @@ public class HouseScene extends Scene {
 
     public Image img1 = new Image("HouseScene/Appartment1.jpg");
     public Image img2 = new Image("HouseScene/Appartment2.jpg");
+    public BackgroundImage background;
 
     public boolean started;
     public boolean paused;
@@ -33,7 +34,7 @@ public class HouseScene extends Scene {
         player = new Player(5.0 / 2 * Cell.sideLength, 27.0 / 2 * Cell.sideLength, 64, 64, true, cellMap);
         player.applyTo(this);
 
-        BackgroundImage background = new BackgroundImage(getWidth() / 2,
+        background = new BackgroundImage(getWidth() / 2,
                 getHeight() / 2,
                 player, img1);
 
@@ -159,7 +160,7 @@ public class HouseScene extends Scene {
         timer2.start();
     }
 
-    private Cell[][] createMap(int rows, int cols) {
+    public Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {

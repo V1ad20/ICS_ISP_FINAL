@@ -1,3 +1,29 @@
-Person B
+Helper
 *
-You should go that way
+Hey! I have cell service, anyone want to use the internet?
+-
+Gleb
+*
+Yes, I was wondering if any of these train routes were any good.
+-
+Helper
+*
+Alright, let me see .... I'm getting 2 hits, one from a UN website and another
+from a blog.  Which one?
+-
+Gleb
+*
+Hmm, I think I'll go with the UN one.  Their data might be more reliable.
+-
+Helper
+*
+Agreed. Oh, it says here that middle train route has been allocated for the army.
+-
+Gleb
+*
+Okay, thanks for the help!
+-
+Helper
+*
+No problem.
+-

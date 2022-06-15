@@ -1,13 +1,12 @@
 Trader
 *
-Hello, do you by any chance have a water bottle? I'll
-trade you for a loaf of bread
+Hello, I am so thirsty. Do you have any water? I have loaf
+of bread if you have some.
 -
 Trader
 *
-Sorry, only a water bottle will do.  I really need one!
+Sorry, I just need water!
 -
 Trader
 *
-Oh my, thank you! It's so hot with all these people here,
-and it makes me so thirsty. Have your blanket young man!
+I can't thank you enough! Here's the loaf, freshly baked.
