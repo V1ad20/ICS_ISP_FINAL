@@ -60,7 +60,5 @@ PlayerBoundary:17 2 17 2:rect
 //Entrance
 Entrance:12 1 14 3:rect
 
-
-
-
-
+//Things that will not stay constant
+PlayerBoundary:12 1 14 1:rect
