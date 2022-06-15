@@ -11,6 +11,10 @@ public class HouseScene extends Scene {
     public Player player;
     Cell[][] cellMap;
 
+    public Image img1 = new Image("HouseScene/Appartment1.jpg");
+    public Image img2 = new Image("HouseScene/Appartment2.jpg");
+    public BackgroundImage background;
+
     public boolean started;
     public boolean paused;
     public boolean resumed;
@@ -24,21 +28,20 @@ public class HouseScene extends Scene {
         super(g, 640, 640);
 
         cellMap = createMap(22, 22);
-        CellArrayTextParser.parseAndApply("src/HouseScene/HouseSceneMap.txt",
+        CellArrayTextParser.parseAndApply("src/HouseScene/HouseSceneMap1.txt",
                 cellMap);
 
         player = new Player(5.0 / 2 * Cell.sideLength, 27.0 / 2 * Cell.sideLength, 64, 64, true, cellMap);
         player.applyTo(this);
 
-        Image img = new Image("HouseScene/AppartmentWithGridLines.jpg");
-        BackgroundImage background = new BackgroundImage(getWidth() / 2,
+        background = new BackgroundImage(getWidth() / 2,
                 getHeight() / 2,
-                player, img);
+                player, img1);
 
         CharacterSpeechBox glebsIntroMonologue = new CharacterSpeechBox("src/HouseScene/GlebsIntroMonologue.txt", true);
 
         // Change path for this
-        CharacterSpeechBox parentEducation = new CharacterSpeechBox("src/HouseScene/GlebsIntroMonologue.txt", false);
+        CharacterSpeechBox parentEducation = new CharacterSpeechBox("src/HouseScene/ParentEducation.txt", false);
 
         ActionHint actionHint = new ActionHint();
 
@@ -157,7 +160,7 @@ public class HouseScene extends Scene {
         timer2.start();
     }
 
-    private Cell[][] createMap(int rows, int cols) {
+    public Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {

@@ -90,6 +90,11 @@ public class App extends Application {
                 if (dreamScene.sceneState == 10) {
                     if (!houseScene.resumed) {
                         houseScene.player.gameCenter.set(4 * Cell.sideLength, 4 * Cell.sideLength);
+                        houseScene.background.setImage(houseScene.img2);
+                        houseScene.cellMap = houseScene.createMap(22, 22);
+                        CellArrayTextParser.parseAndApply("src/HouseScene/HouseSceneMap2.txt",
+                                houseScene.cellMap);
+                        houseScene.player.cellMap = houseScene.cellMap;
                         houseScene.player.canMove = true;
                     }
                     houseScene.resumed = true;
