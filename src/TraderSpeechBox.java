@@ -7,6 +7,10 @@ public class TraderSpeechBox extends SpeechBox {
         this.goodNum = goodNum;
     }
 
+    /**
+     * @param millis
+     * @param playerGoodNum
+     */
     public void display(int millis, int playerGoodNum) {
         TextBoxContent textBoxContent = contents[currentIndex];
         if (!isVisible()) {

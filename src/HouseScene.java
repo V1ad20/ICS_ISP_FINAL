@@ -1,3 +1,12 @@
+
+/*  @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ * 
+ */
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -140,7 +149,6 @@ public class HouseScene extends Scene {
                     player.updateScreenPosition();
                     background.updatePosition();
                     // background.updateGridOverlay();
-                    System.out.println(player.gameCenter);
                 }
             }
         };
@@ -169,10 +177,9 @@ public class HouseScene extends Scene {
     }
 
     /**
-     * Method to create the map per the cell array
      * @param rows
      * @param cols
-     * @return
+     * @return Cell[][]
      */
     public Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];

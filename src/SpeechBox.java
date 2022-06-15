@@ -14,15 +14,19 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+/** Base class for speech box type objects */
 public class SpeechBox extends Group {
+    /* Dimension variables */
     private final int WIDTH = 640;
     private final int HEGHT = 134;
 
+    /* Variables that contain the contents of the speech box (text) */
     public TextBoxContent[] contents;
     public ImageView textBox;
     public Text characterTalkingText;
     public Text phraseText;
 
+    /* Variables that contain the actual information about the state of the box */
     public int timesSpacePressed = 0;
     public int currentBlockIndex = 0;
     public int prevTime;
@@ -31,6 +35,7 @@ public class SpeechBox extends Group {
     public boolean activated;
     public boolean completed = false;
 
+    /* helper class used for better abstraction of content/text */
     static class TextBoxContent {
         public final String characterTalking;
         public final String phrase;

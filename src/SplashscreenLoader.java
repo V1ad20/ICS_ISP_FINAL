@@ -9,9 +9,16 @@ import javafx.scene.Scene;
 import javafx.scene.shape.Arc;
 import javafx.util.Duration;
 
+/** Creates splashSceen scene */
 public class SplashscreenLoader {
+
+    /* true if the splashScreen is done */
     boolean finished = false;
 
+    /**
+     * @return Scene
+     * @throws IOException
+     */
     // Parent cR = loadParent();
 
     public Scene load() throws IOException {
@@ -21,6 +28,7 @@ public class SplashscreenLoader {
 
         fadeIn(companyRoot, 3000);
 
+        /** Animation timer that helps with animation of forward arc generation */
         AnimationTimer timer2 = new AnimationTimer() {
             @Override
             public void handle(long arg0) {
@@ -33,6 +41,7 @@ public class SplashscreenLoader {
             }
         };
 
+        /** Animation timer that helps with animation of backward arc generation */
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long arg0) {
@@ -50,6 +59,11 @@ public class SplashscreenLoader {
         return companyScene;
     }
 
+    /**
+     * @param root
+     * @param time
+     *             facilitaes fading in
+     */
     public void fadeIn(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -59,6 +73,11 @@ public class SplashscreenLoader {
         ft.play();
     }
 
+    /**
+     * @param root
+     * @param time
+     *             facilitates fading out
+     */
     public void fadeOut(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -66,15 +85,5 @@ public class SplashscreenLoader {
         ft.setFromValue(1);
         ft.setToValue(0);
         ft.play();
-    }
-
-    private static Parent loadParent() {
-        Object obj = new Object();
-        try {
-            return FXMLLoader.load(Object.class.getResource("resources/splashScreen/companyLogo.fxml"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

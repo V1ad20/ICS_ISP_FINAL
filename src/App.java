@@ -33,10 +33,18 @@ public class App extends Application {
     String currentUsername = "";
     String currentTime = "";
 
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         launch(args);
     }
 
+    /**
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
 

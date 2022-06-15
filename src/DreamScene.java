@@ -872,7 +872,7 @@ public class DreamScene extends Scene {
      * @param filepath the path of the file containing the text to be displayed
      * @param root Root Group
      * @param scene Current Scene
-     * @throws IOException handles exception from file reader
+     * @throws IOException handles exception from file
      */
     public void textTool(String filepath, Group root, Scene scene) throws IOException {
 
