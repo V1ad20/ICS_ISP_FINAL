@@ -1,8 +1,16 @@
+
+/*  @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ * 
+ */
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -132,7 +140,6 @@ public class HouseScene extends Scene {
                     player.updateScreenPosition();
                     background.updatePosition();
                     // background.updateGridOverlay();
-                    System.out.println(player.gameCenter);
                 }
             }
         };

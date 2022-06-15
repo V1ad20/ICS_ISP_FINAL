@@ -67,12 +67,6 @@ public class App extends Application {
         // mainMenuLoader.finished = true;
         // houseScene.paused = true;
 
-        splashscreenLoader.finished = true;
-        mainMenuLoader.finished = true;
-        houseScene.paused = true;
-        houseScene.finished = true;
-        subwayScene.finished = true;
-
         currentScene = splashscreen;
 
         AnimationTimer timer = new AnimationTimer() {

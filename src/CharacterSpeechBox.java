@@ -1,25 +1,25 @@
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+/*  @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ * 
+ */
 
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-
+/** Speech box for characters */
 public class CharacterSpeechBox extends SpeechBox {
 
     public CharacterSpeechBox(String path, boolean activated) {
         super(path, activated);
     }
 
+    /**
+     * 
+     * @param millis - used to keep time of the animations
+     *               Animates and displays text that is assigned to a certain
+     *               interaction
+     */
     public void display(int millis) {
         TextBoxContent textBoxContent = contents[currentIndex];
         if (!isVisible()) {

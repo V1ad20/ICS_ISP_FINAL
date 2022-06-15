@@ -1,11 +1,22 @@
 
+/*  @author Sean Yang
+ * @author Vlad Surdu
+ * @author Ana-Maria Bangala
+ * @version 5.0.1
+ * Teacher: Ms. Krasteva
+ * Course Code: ICS4U0/P
+ * 
+ */
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
+/** Class that makes the grid in which the player interacts with */
 public class CellArrayTextParser {
 
+    /** Cell map that the class will work with */
     private static Cell[][] cellMap;
+
+    /* Values for cell */
     private static int row1;
     private static int col1;
     private static int row2;
@@ -15,6 +26,7 @@ public class CellArrayTextParser {
     /**
      * @param path
      * @param cM
+     *             Parses a text file and loads information into cellMap
      */
     public static void parseAndApply(String path, Cell[][] cM) {
         cellMap = cM;
@@ -22,8 +34,6 @@ public class CellArrayTextParser {
             Scanner sc = new Scanner(new File(path));
             while (sc.hasNext()) {
                 String rawData = sc.nextLine();
-                System.out.println(rawData);
-
                 // The conditions MUST be in this order (if the string is empty then the
                 // substring method will throw an error)
                 if (!rawData.equals("") && !rawData.substring(0, 2).equals("//")) {
@@ -46,6 +56,7 @@ public class CellArrayTextParser {
 
     /**
      * @param inputArr
+     *                 handles non camera cell logic
      */
     private static void handleNonCameraCells(String[] inputArr) {
         if (inputArr.length > 2) {
@@ -78,6 +89,7 @@ public class CellArrayTextParser {
 
     /**
      * @param inputArr
+     *                 handles camera cell logic
      */
     private static void handleCameraCells(String[] inputArr) {
         cellType = inputArr[2];
@@ -95,13 +107,13 @@ public class CellArrayTextParser {
 
         for (int row = row1; row <= row2; row++) {
             for (int col = col1; col <= col2; col++) {
-                System.out.println("CameraCell Added");
                 cellMap[row][col] = new CameraCell(row, col, cellType, cameraCellType, rowBorder, colBorder);
             }
         }
 
     }
 
+    /* Creates a rectangle of cells */
     private static void rect() {
         for (int row = row1; row <= row2; row++) {
             for (int col = col1; col <= col2; col++) {
@@ -110,6 +122,7 @@ public class CellArrayTextParser {
         }
     }
 
+    /** creates a rectangular border of cells */
     private static void rectBorder() {
         for (int row = row1; row <= row2; row++) {
             cellMap[row][col1].type = cellType;

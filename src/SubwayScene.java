@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+/*Class that creates a subway scene */
 public class SubwayScene extends Scene {
     Player player;
     Cell[][] cellMap;

@@ -63,36 +63,20 @@ public class Camera extends Rectangle {
         gameCenter = player.gameCenter.returnCopy();
         updateCornerPoints();
 
-        System.out.println(gameCenter);
         determineBehaviourAtCell(gameCenterTopLeft, prevGameCenterTopLeft);
 
-        // System.out.println(gameCenterTopLeft.x - prevGameCenterTopLeft.x);
-        // gameCenter
-        // .translateX(gameCenterTopLeft.x - prevGameCenterTopLeft.x)
-        // .translateY(gameCenterTopLeft.y - prevGameCenterTopLeft.y);
         gameCenter.set(gameCenterTopLeft.x + xOffset, gameCenterTopLeft.y + yOffset);
         updateCornerPoints();
-        System.out.println(gameCenter + "\n");
 
         determineBehaviourAtCell(gameCenterTopRight, prevGameCenterTopRight);
-        // gameCenter
-        // .translateX(gameCenterTopRight.x - prevGameCenterTopRight.x)
-        // .translateY(gameCenterTopRight.y - prevGameCenterTopRight.y);
         gameCenter.set(gameCenterTopRight.x - xOffset, gameCenterTopRight.y + yOffset);
         updateCornerPoints();
 
         determineBehaviourAtCell(gameCenterBottomLeft, prevGameCenterBottomLeft);
-        // gameCenter
-        // .translateX(gameCenterBottomLeft.x - prevGameCenterBottomLeft.x)
-        // .translateY(gameCenterBottomLeft.y - prevGameCenterBottomLeft.y);
         gameCenter.set(gameCenterBottomLeft.x + xOffset, gameCenterBottomLeft.y - yOffset);
         updateCornerPoints();
 
         determineBehaviourAtCell(gameCenterBottomRight, prevGameCenterBottomRight);
-        // gameCenter
-        // .translateX(gameCenterBottomRight.x - prevGameCenterBottomRight.x)
-        // .translateY(gameCenterBottomRight.y - prevGameCenterBottomRight.y);
-
         gameCenter.set(gameCenterBottomRight.x - xOffset, gameCenterBottomRight.y - yOffset);
         updateCornerPoints();
 
@@ -100,78 +84,7 @@ public class Camera extends Rectangle {
         prevGameCenterTopRight = gameCenterTopRight.returnCopy();
         prevGameCenterBottomLeft = gameCenterBottomLeft.returnCopy();
         prevGameCenterBottomRight = gameCenterBottomRight.returnCopy();
-
-        // setTranslateX(gameCenter.x - getWidth() / 2);
-        // setTranslateY(gameCenter.y - getHeight() / 2);
     }
-
-    // private void determineBehaviourAtCell(Point point, Point prevPoint, String
-    // cellType) {
-    // Cell pointCell = cellMap[((int) point.y)
-    // / Cell.sideLength][((int) point.x) / Cell.sideLength];
-    // System.out.println(pointCell);
-
-    // // Check collisions with non-diagonal cells (directions are relative to
-    // player)
-    // boolean topCollision = false; // "head" of player is hit ect. ect.
-    // boolean bottomCollision = false;
-    // boolean leftCollision = false;
-    // boolean rightCollision = false;
-
-    // Cell c = cellMap[pointCell.rowIndex - 1][pointCell.colIndex];
-    // if (c.type.equals(cellType) && intersectionOccursAt(c, point)) {
-    // topCollision = true;
-    // handleCollision(c, point, prevPoint);
-    // c.setFill(Color.PINK);
-    // }
-    // c = cellMap[pointCell.rowIndex][pointCell.colIndex - 1];
-    // if (c.type.equals(cellType) && intersectionOccursAt(c, point)) {
-    // leftCollision = true;
-    // handleCollision(c, point, prevPoint);
-    // c.setFill(Color.ORANGE);
-    // }
-    // c = cellMap[pointCell.rowIndex][pointCell.colIndex + 1];
-    // if (c.type.equals(cellType) && intersectionOccursAt(c, point)) {
-    // rightCollision = true;
-    // handleCollision(c, point, prevPoint);
-    // c.setFill(Color.YELLOW);
-    // }
-    // c = cellMap[pointCell.rowIndex + 1][pointCell.colIndex];
-    // if (c.type.equals(cellType) && intersectionOccursAt(c, point)) {
-    // bottomCollision = true;
-    // handleCollision(c, point, prevPoint);
-    // c.setFill(Color.PURPLE);
-    // }
-
-    // // Loops through adjacent cells
-    // for (int i = -1; i <= 1; i++) {
-    // for (int j = -1; j <= 1; j++) {
-    // c = cellMap[pointCell.rowIndex + i][pointCell.colIndex + j];
-    // if (intersectionOccursAt(c, point)) {
-
-    // /**
-    // * Collision checker and corrector
-    // * (only diagonal cells because
-    // * non-diagonal cells were dealt with already)
-    // */
-    // if (c.type.equals(cellType)) {
-    // c.setFill(Color.GREEN);
-    // // Registers collisions with diagonal cells if there are no
-    // // non-diagonal cells that would have prevented collisions
-
-    // if (i == -1 && j == -1 && !topCollision && !leftCollision)
-    // handleCollision(c, point, prevPoint);
-    // else if (i == -1 && j == 1 && !topCollision && !rightCollision)
-    // handleCollision(c, point, prevPoint);
-    // else if (i == 1 && j == -1 && !bottomCollision && !leftCollision)
-    // handleCollision(c, point, prevPoint);
-    // else if (i == 1 && j == 1 && !bottomCollision && !rightCollision)
-    // handleCollision(c, point, prevPoint);
-    // }
-    // }
-    // }
-    // }
-    // }
 
     private void determineBehaviourAtCell(Point point, Point prevPoint) {
         Cell pointCell = cellMap[(int) point.y / Cell.sideLength][(int) point.x / Cell.sideLength];

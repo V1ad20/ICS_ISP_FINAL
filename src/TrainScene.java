@@ -41,7 +41,6 @@ public class TrainScene extends Scene {
             public void handle(long nanos) {
                 int millis = (int) nanos / 1000000;
                 if (started && !finished) {
-                    System.out.println(millis);
                     if (!trainDialogue.activated && (int) Math.floor(millis * 0.0005) > prevTime) {
                         trainDialogue.activated = true;
                     }
@@ -49,9 +48,8 @@ public class TrainScene extends Scene {
                     if (trainDialogue.activated && !trainDialogue.completed) {
                         trainDialogue.display(millis);
                     } else if (trainDialogue.completed) {
-                        opacity += 0.0005;
+                        opacity += 0.005;
                     }
-
                     fadeOut.setOpacity(opacity);
 
                     if (opacity > 2) {

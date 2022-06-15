@@ -4,11 +4,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/** Class that controls the logic for the backgorund image movement */
 public class BackgroundImage extends ImageView {
 
+    /* Player object */
     public Player player;
+
+    /* Coordinates for controlling position */
     public Point offset;
     public Point translateComponent;
+
+    /* Rectangle array for drawing grid */
     public Rectangle[][] rectangleGrid;
 
     public BackgroundImage(double offsetX, double offsetY, Player player, Image img) {
@@ -19,12 +25,18 @@ public class BackgroundImage extends ImageView {
         rectangleGrid = new Rectangle[player.cellMap.length][player.cellMap[0].length];
     }
 
+    /**
+     * Updates position of background
+     */
     public void updatePosition() {
         translateComponent.set(offset.x - player.refGameCenter.x, offset.y - player.refGameCenter.y);
         setTranslateX(translateComponent.x);
         setTranslateY(translateComponent.y);
     }
 
+    /**
+     * Updates the grid overlay (used in debugging)
+     */
     public void updateGridOverlay() {
         for (Rectangle[] rectRow : rectangleGrid) {
             for (Rectangle rect : rectRow) {
@@ -35,7 +47,8 @@ public class BackgroundImage extends ImageView {
     }
 
     /**
-     * @param g
+     * @param g - Group object to which the rectangles in the rectangle array are
+     *          assigned to
      */
     public void initializeGridOverlay(Group g) {
         for (int row = 0; row < player.cellMap.length; row++) {

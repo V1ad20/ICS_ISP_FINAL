@@ -189,7 +189,6 @@ public class Player extends ImageView {
 
     private void determineBehaviourAtCell() {
         currentCell = getCurrentCell();
-        System.out.println(currentCell);
 
         // Check collisions with non-diagonal cells (directions are relative to player)
         boolean topCollision = false; // "head" of player is hit ect. ect.
