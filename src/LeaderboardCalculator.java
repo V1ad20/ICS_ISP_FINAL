@@ -16,7 +16,8 @@ public class LeaderboardCalculator {
     } 
 
     public void calculate(){
-        
+        QuickSort sorter = new QuickSort();
+        sorter.sort();
     }
     
 }

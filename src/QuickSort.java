@@ -6,11 +6,11 @@ public class QuickSort {
     Long[] recordedTimes;
 
     public QuickSort(ArrayList<String> arr1, ArrayList<Long> arr2) {
-        names = (String[]) arr1.toArray();
-        recordedTimes = (Long[]) arr2.toArray();
+        this.names = (String[]) arr1.toArray();
+        this.recordedTimes = (Long[]) arr2.toArray();
     }
 
-    private void controlFunc(String[] named, Long[] arr, int start, int end) {
+    public void controlFunc(String[] named, Long[] arr, int start, int end) {
         if (start < end) {
             int pivot = partition(named, arr, start, end);
             controlFunc(named, arr, start, pivot - 1);
@@ -46,5 +46,13 @@ public class QuickSort {
 
     public void sort(String[] names, Long[] recordedTimes) {
         controlFunc(names, recordedTimes, 0, recordedTimes.length - 1);
+    }
+
+    public String[] getNames() {
+        return names;
+    }
+
+    public Long[] getTimes() {
+        return recordedTimes;
     }
 }
