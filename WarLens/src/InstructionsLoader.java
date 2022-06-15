@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
  * Course Code: ICS4U0/P
  */
 
+<<<<<<< HEAD
 public class InstructionsLoader {
     boolean finished = false; //Checks if the class has finished running
 
@@ -24,6 +25,10 @@ public class InstructionsLoader {
     /**
      * the load method loads the entire scene and all of its functionality
      * @return returns the scene and all contained nodes
+=======
+    /**
+     * @return Scene
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @throws IOException
      */
     public Scene load() throws IOException {

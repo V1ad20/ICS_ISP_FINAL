@@ -1,0 +1,13 @@
+Trader
+*
+Hello, please tell me you have some food. I'll trade you!
+Do you want a Teddy Bear?
+-
+Trader
+*
+Sorry, I need food, nothing else!
+-
+Trader
+*
+I can't thank you enough, I havent eaten anything since the attacks
+started.

@@ -1,0 +1,12 @@
+Trader
+*
+Hello, I am so thirsty. Do you have any water? I have loaf
+of bread if you have some.
+-
+Trader
+*
+Sorry, I just need water!
+-
+Trader
+*
+I can't thank you enough! Here's the loaf, freshly baked.

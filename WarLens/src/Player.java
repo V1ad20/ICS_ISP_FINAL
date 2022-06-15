@@ -79,8 +79,12 @@ public class Player extends ImageView {
         // setFill(Color.RED);
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param event
      */
     private void setMotion(KeyEvent event) {
@@ -102,8 +106,12 @@ public class Player extends ImageView {
         }
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param event
      */
     private void cancelMotion(KeyEvent event) {
@@ -125,8 +133,12 @@ public class Player extends ImageView {
         }
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param scene
      */
     public void applyTo(Scene scene) {
@@ -155,8 +167,12 @@ public class Player extends ImageView {
         setTranslateY((sceneHeight - getFitHeight()) / 2 + gameCenter.y - refGameCenter.y);
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param millis
      */
     public void updateCostume(int millis) {
@@ -260,8 +276,12 @@ public class Player extends ImageView {
         }
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param c
      * @return boolean
      */
@@ -270,8 +290,12 @@ public class Player extends ImageView {
                 && Math.abs(gameCenter.y - c.getGameCenterY()) < (getFitHeight() + c.getHeight()) / 2;
     }
 
+<<<<<<< HEAD
     
     /** 
+=======
+    /**
+>>>>>>> 29fee8c3ffe1c040ceb31d568959c25e695d7318
      * @param c
      */
     private void handleCollision(Cell c) {

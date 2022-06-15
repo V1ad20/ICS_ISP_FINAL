@@ -1,0 +1,129 @@
+//Defining CameraBoundaries
+CameraCell:Horizontal:Default:7 0 12 44:7 0
+
+CameraCell:Vertical:Default:0 0 12 5:0 6
+CameraCell:Vertical:Default:0 39 12 44:0 39  
+
+CameraCell:Corner:Default:7 39 12 44:7 39
+CameraCell:Corner:Default:7 0 12 5:7 6
+
+//Trades
+BlanketTrade:5 7 7 9:rect
+LoafTrade:4 20 6 22:rect
+ToyTrade:4 39 6 41:rect
+
+//Family Area
+FamilyArea:8 2 10 6:rect
+
+//Map Clues
+MapClueA:4 24 6 26:rect
+MapClueB:5 33 7 35:rect
+
+//StairTop
+StairTop:2 1 2 2:rect
+
+//Boundary
+PlayerBoundary:4 0 12 44:rectBorder
+PlayerBoundary:10 13
+PlayerBoundary:11 14
+PlayerBoundary:1 1 1 2:rect
+PlayerBoundary:1 3 7 3:rect
+PlayerBoudary:0 0 12 0:rect
+
+//People and Obstacles
+PlayerBoundary:9 3
+PlayerBoundary:9 4
+PlayerBoundary:9 5
+PlayerBoundary:7 6
+PlayerBoundary:5 5
+PlayerBoundary:5 6
+PlayerBoundary:5 8
+PlayerBoundary:5 9
+PlayerBoundary:5 10
+PlayerBoundary:5 11
+PlayerBoundary:5 12
+PlayerBoundary:5 13
+PlayerBoundary:5 14
+PlayerBoundary:9 9
+PlayerBoundary:8 10
+PlayerBoundary:7 11
+PlayerBoundary:9 11
+PlayerBoundary:9 12
+PlayerBoundary:8 12
+PlayerBoundary:6 8
+PlayerBoundary:10 13
+PlayerBoundary:11 14
+PlayerBoundary:9 15
+
+PlayerBoundary:5 16
+PlayerBoundary:5 17
+PlayerBoundary:5 18
+PlayerBoundary:5 20
+PlayerBoundary:5 21
+PlayerBoundary:5 23
+PlayerBoundary:5 25
+PlayerBoundary:5 26
+PlayerBoundary:5 29
+PlayerBoundary:5 30
+PlayerBoundary:5 33
+PlayerBoundary:5 35
+PlayerBoundary:5 36
+PlayerBoundary:5 37
+PlayerBoundary:5 40
+PlayerBoundary:5 42
+
+PlayerBoundary:6 15
+PlayerBoundary:6 27
+PlayerBoundary:6 30
+PlayerBoundary:6 34
+PlayerBoundary:6 36
+
+PlayerBoundary:7 14
+PlayerBoundary:7 15
+PlayerBoundary:7 21
+PlayerBoundary:7 24
+PlayerBoundary:7 25
+PlayerBoundary:7 32
+PlayerBoundary:7 34
+PlayerBoundary:7 39
+PlayerBoundary:7 41
+
+PlayerBoundary:8 16
+PlayerBoundary:8 20
+PlayerBoundary:8 21
+PlayerBoundary:8 24
+PlayerBoundary:8 25
+PlayerBoundary:8 29
+PlayerBoundary:8 31
+PlayerBoundary:8 34
+PlayerBoundary:8 36
+PlayerBoundary:8 40
+PlayerBoundary:8 41
+PlayerBoundary:8 42
+PlayerBoundary:8 43
+
+PlayerBoundary:9 16
+PlayerBoundary:9 20
+PlayerBoundary:9 21
+PlayerBoundary:9 27
+PlayerBoundary:9 28
+PlayerBoundary:9 33
+PlayerBoundary:9 38
+PlayerBoundary:9 39
+
+PlayerBoundary:10 19
+PlayerBoundary:10 26
+PlayerBoundary:10 33
+PlayerBoundary:10 34
+PlayerBoundary:10 42
+
+PlayerBoundary:11 18
+PlayerBoundary:11 25
+PlayerBoundary:11 38
+PlayerBoundary:11 39
+
+
+Default:4 1 4 2:rect
+
+PlayerBoundary:0 0 11 0
+
