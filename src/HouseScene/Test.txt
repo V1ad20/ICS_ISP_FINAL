@@ -1,1 +1,0 @@
-CameraCell:Horizontal:0 0 5 20:5 0 

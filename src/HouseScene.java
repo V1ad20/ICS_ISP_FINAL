@@ -38,7 +38,7 @@ public class HouseScene extends Scene {
         CharacterSpeechBox glebsIntroMonologue = new CharacterSpeechBox("src/HouseScene/GlebsIntroMonologue.txt", true);
 
         // Change path for this
-        CharacterSpeechBox parentEducation = new CharacterSpeechBox("src/HouseScene/GlebsIntroMonologue.txt", false);
+        CharacterSpeechBox parentEducation = new CharacterSpeechBox("src/HouseScene/ParentEducation.txt", false);
 
         ActionHint actionHint = new ActionHint();
 

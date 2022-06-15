@@ -53,8 +53,6 @@ public class SubwayScene extends Scene {
         CharacterSpeechBox timeToGo = new CharacterSpeechBox("src/SubwayScene/TimeToGo.txt", false);
         g.getChildren().add(timeToGo);
 
-        background.initializeGridOverlay(g);
-
         addEventHandler(KeyEvent.KEY_PRESSED, e -> {
             if (e.getCode() == KeyCode.SPACE) {
                 if (askToTrade.activated && !askToTrade.completed) {
@@ -188,7 +186,6 @@ public class SubwayScene extends Scene {
                     player.updateCostume(millis);
                     player.updateScreenPosition();
                     background.updatePosition();
-                    background.updateGridOverlay();
                 }
             }
         };
