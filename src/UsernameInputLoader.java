@@ -19,6 +19,7 @@ public class UsernameInputLoader extends Group{
 
         if(textFieldControl.finished){
             passedUsername = textFieldControl.getUsername();
+            finished = true;
         }
 
         return scene;

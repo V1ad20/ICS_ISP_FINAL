@@ -44,7 +44,7 @@ public class QuickSort {
         return (i + 1);
     }
 
-    public void sort(String[] names, Long[] recordedTimes) {
+    public void sort() {
         controlFunc(names, recordedTimes, 0, recordedTimes.length - 1);
     }
 
