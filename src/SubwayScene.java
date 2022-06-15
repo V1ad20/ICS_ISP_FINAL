@@ -192,6 +192,11 @@ public class SubwayScene extends Scene {
         timer.start();
     }
 
+    /**
+     * @param rows
+     * @param cols
+     * @return Cell[][]
+     */
     private Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];
         for (int row = 0; row < rows; row++) {
@@ -202,6 +207,10 @@ public class SubwayScene extends Scene {
         return cellMap;
     }
 
+    /**
+     * @param b
+     * @param millis
+     */
     private void handlePotentialTrade(TraderSpeechBox b, int millis) {
         if (!b.activated) {
             actionHint.setVisible(true);
@@ -221,6 +230,10 @@ public class SubwayScene extends Scene {
         }
     }
 
+    /**
+     * @param b
+     * @param millis
+     */
     private void handleNormalSpeech(CharacterSpeechBox b, int millis) {
         if (!b.activated) {
             actionHint.setVisible(true);
@@ -238,6 +251,11 @@ public class SubwayScene extends Scene {
         }
     }
 
+    /**
+     * @param b
+     * @param millis
+     * @param type
+     */
     private void handleMapClue(CharacterSpeechBox b, int millis, String type) {
         if (!b.activated) {
             actionHint.setVisible(true);

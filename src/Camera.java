@@ -220,6 +220,11 @@ public class Camera extends Rectangle {
         }
     }
 
+    /**
+     * @param point
+     * @param prevPoint
+     * @return Point
+     */
     private Point correctPoint(Point point, Point prevPoint) {
         Point newPoint = new Point(point.x, prevPoint.y);
         if (!cellMap[(int) newPoint.y / Cell.sideLength][(int) newPoint.x / Cell.sideLength].type
@@ -234,11 +239,21 @@ public class Camera extends Rectangle {
         return prevPoint.returnCopy();
     }
 
+    /**
+     * @param c
+     * @param point
+     * @return boolean
+     */
     private boolean intersectionOccursAt(Cell c, Point point) {
         return Math.abs(point.x - c.getGameCenterX()) < c.getWidth()
                 && Math.abs(point.y - c.getGameCenterY()) < c.getHeight();
     }
 
+    /**
+     * @param c
+     * @param point
+     * @param prevPoint
+     */
     private void handleCollision(Cell c, Point point, Point prevPoint) {
         double angle = Math.atan2(prevPoint.y - c.getGameCenterY(), prevPoint.x - c.getGameCenterX());
 

@@ -19,20 +19,26 @@ public class TextFieldController {
 
     boolean finished = false;
 
-    public void submit(ActionEvent event){
+    /**
+     * @param event
+     */
+    public void submit(ActionEvent event) {
 
         username = textField.getText();
 
-        if(username.length() == 0){
+        if (username.length() == 0) {
             warningText.setText("USERNAME CANNOT BE EMPTY");
-        }else if(username.length() > 8){
+        } else if (username.length() > 8) {
             warningText.setText("USERNAME CANNOT EXCEED 8 CHARACTERS");
-        }else{
+        } else {
             finished = true;
         }
     }
 
-    public String getUsername(){
+    /**
+     * @return String
+     */
+    public String getUsername() {
         return username;
     }
 }

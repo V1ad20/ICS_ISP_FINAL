@@ -10,6 +10,12 @@ public class QuickSort {
         this.recordedTimes = (Long[]) arr2.toArray();
     }
 
+    /**
+     * @param named
+     * @param arr
+     * @param start
+     * @param end
+     */
     public void controlFunc(String[] named, Long[] arr, int start, int end) {
         if (start < end) {
             int pivot = partition(named, arr, start, end);
@@ -18,6 +24,12 @@ public class QuickSort {
         }
     }
 
+    /**
+     * @param named
+     * @param arr
+     * @param start
+     * @param end
+     */
     public void swap(String[] named, Long[] arr, int start, int end) {
 
         Long temp = arr[start];
@@ -28,6 +40,13 @@ public class QuickSort {
         named[end] = tempString;
     }
 
+    /**
+     * @param named
+     * @param arr
+     * @param start
+     * @param end
+     * @return int
+     */
     public int partition(String[] named, Long[] arr, int start, int end) {
         int pivChoose = (int) ((Math.random() * (end - start)) + start);
         Long pivot = arr[pivChoose];
@@ -48,10 +67,16 @@ public class QuickSort {
         controlFunc(names, recordedTimes, 0, recordedTimes.length - 1);
     }
 
+    /**
+     * @return String[]
+     */
     public String[] getNames() {
         return names;
     }
 
+    /**
+     * @return Long[]
+     */
     public Long[] getTimes() {
         return recordedTimes;
     }

@@ -12,6 +12,10 @@ public class CellArrayTextParser {
     private static int col2;
     private static String cellType;
 
+    /**
+     * @param path
+     * @param cM
+     */
     public static void parseAndApply(String path, Cell[][] cM) {
         cellMap = cM;
         try {
@@ -40,6 +44,9 @@ public class CellArrayTextParser {
 
     }
 
+    /**
+     * @param inputArr
+     */
     private static void handleNonCameraCells(String[] inputArr) {
         if (inputArr.length > 2) {
             String fillConfiguration = inputArr[2];
@@ -69,6 +76,9 @@ public class CellArrayTextParser {
         }
     }
 
+    /**
+     * @param inputArr
+     */
     private static void handleCameraCells(String[] inputArr) {
         cellType = inputArr[2];
         String cameraCellType = inputArr[1];

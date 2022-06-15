@@ -160,6 +160,11 @@ public class HouseScene extends Scene {
         timer2.start();
     }
 
+    /**
+     * @param rows
+     * @param cols
+     * @return Cell[][]
+     */
     public Cell[][] createMap(int rows, int cols) {
         Cell[][] cellMap = new Cell[rows][cols];
         for (int row = 0; row < rows; row++) {

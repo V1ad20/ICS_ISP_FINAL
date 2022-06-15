@@ -69,6 +69,9 @@ public class Player extends ImageView {
         // setFill(Color.RED);
     }
 
+    /**
+     * @param event
+     */
     private void setMotion(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
@@ -88,6 +91,9 @@ public class Player extends ImageView {
         }
     }
 
+    /**
+     * @param event
+     */
     private void cancelMotion(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
@@ -107,6 +113,9 @@ public class Player extends ImageView {
         }
     }
 
+    /**
+     * @param scene
+     */
     public void applyTo(Scene scene) {
         scene.addEventHandler(KeyEvent.KEY_PRESSED, e -> setMotion(e));
         scene.addEventHandler(KeyEvent.KEY_RELEASED, e -> cancelMotion(e));
@@ -133,6 +142,9 @@ public class Player extends ImageView {
         setTranslateY((sceneHeight - getFitHeight()) / 2 + gameCenter.y - refGameCenter.y);
     }
 
+    /**
+     * @param millis
+     */
     public void updateCostume(int millis) {
         currentTime = (int) Math.floor(0.01 * millis);
         if (canMove && (verticalMotion != 0 || horizontalMotion != 0)) {
@@ -235,11 +247,18 @@ public class Player extends ImageView {
         }
     }
 
+    /**
+     * @param c
+     * @return boolean
+     */
     private boolean intersectionOccursAt(Cell c) {
         return Math.abs(gameCenter.x - c.getGameCenterX()) < (getFitWidth() + c.getWidth()) / 2
                 && Math.abs(gameCenter.y - c.getGameCenterY()) < (getFitHeight() + c.getHeight()) / 2;
     }
 
+    /**
+     * @param c
+     */
     private void handleCollision(Cell c) {
         double angle = Math.atan2(prevGameCenter.y - c.getGameCenterY(), prevGameCenter.x - c.getGameCenterX());
 

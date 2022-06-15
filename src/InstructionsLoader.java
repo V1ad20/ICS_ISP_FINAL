@@ -9,6 +9,10 @@ import javafx.scene.input.MouseEvent;
 public class InstructionsLoader {
     boolean finished = false;
 
+    /**
+     * @return Scene
+     * @throws IOException
+     */
     public Scene load() throws IOException {
         Parent companyRoot = FXMLLoader.load(getClass().getResource("resources/instructionsMenu.fxml"));
         Scene scene = new Scene(companyRoot, 640, 640);
@@ -19,5 +23,5 @@ public class InstructionsLoader {
             finished = true;
         });
         return scene;
-    }   
+    }
 }

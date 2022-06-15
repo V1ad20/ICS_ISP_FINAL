@@ -12,6 +12,11 @@ import javafx.util.Duration;
 public class SplashscreenLoader {
     boolean finished = false;
 
+    
+    /** 
+     * @return Scene
+     * @throws IOException
+     */
     // Parent cR = loadParent();
 
     public Scene load() throws IOException {
@@ -50,6 +55,11 @@ public class SplashscreenLoader {
         return companyScene;
     }
 
+    
+    /** 
+     * @param root
+     * @param time
+     */
     public void fadeIn(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -59,6 +69,11 @@ public class SplashscreenLoader {
         ft.play();
     }
 
+    
+    /** 
+     * @param root
+     * @param time
+     */
     public void fadeOut(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -68,6 +83,10 @@ public class SplashscreenLoader {
         ft.play();
     }
 
+    
+    /** 
+     * @return Parent
+     */
     private static Parent loadParent() {
         Object obj = new Object();
         try {

@@ -35,10 +35,18 @@ public class App extends Application {
     String currentUsername = "";
     String currentTime = "";
 
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         launch(args);
     }
 
+    /**
+     * @param stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -61,6 +69,12 @@ public class App extends Application {
         // splashscreenLoader.finished = true;
         // mainMenuLoader.finished = true;
         // houseScene.paused = true;
+
+        splashscreenLoader.finished = true;
+        mainMenuLoader.finished = true;
+        houseScene.paused = true;
+        houseScene.finished = true;
+        subwayScene.finished = true;
 
         currentScene = splashscreen;
 
@@ -86,7 +100,7 @@ public class App extends Application {
                     currentScene = usernameScene;
                 }
 
-                if(usernameLoader.finished){
+                if (usernameLoader.finished) {
                     currentUsername = usernameLoader.passedUsername;
                     timekeeper.start();
                     currentScene = houseScene;

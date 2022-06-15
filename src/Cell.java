@@ -25,14 +25,23 @@ public class Cell extends Rectangle {
         this.type = type;
     }
 
+    /**
+     * @return double
+     */
     public double getGameCenterX() {
         return colIndex * (double) sideLength + getWidth() / 2;
     }
 
+    /**
+     * @return double
+     */
     public double getGameCenterY() {
         return rowIndex * (double) sideLength + getHeight() / 2;
     }
 
+    /**
+     * @return String
+     */
     public String toString() {
         return "\"" + type + "\"[" + rowIndex + "," + colIndex + "]";
     }

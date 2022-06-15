@@ -42,6 +42,10 @@ public class DreamScene extends Scene {
     int sceneState;
     private static Group root = new Group();
 
+    /**
+     * @param root
+     * @param time
+     */
     public void fadeIn(Node root, int time) {
         FadeTransition ft = new FadeTransition();
         ft.setDuration(Duration.millis(time));
@@ -203,6 +207,10 @@ public class DreamScene extends Scene {
         part2Text.start();
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet1(Group root, Scene scene) {
 
         sceneState = 1;
@@ -284,6 +292,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet2(Group root, Scene scene) {
 
         sceneState = 2;
@@ -365,6 +377,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet3(Group root, Scene scene) {
 
         sceneState = 3;
@@ -446,6 +462,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet4(Group root, Scene scene) {
 
         sceneState = 4;
@@ -527,6 +547,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet5(Group root, Scene scene) {
 
         sceneState = 5;
@@ -608,6 +632,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet6(Group root, Scene scene) {
 
         sceneState = 6;
@@ -672,6 +700,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet7(Group root, Scene scene) {
 
         sceneState = 7;
@@ -736,6 +768,10 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param root
+     * @param scene
+     */
     public void scene2QSet8(Group root, Scene scene) {
 
         sceneState = 8;
@@ -800,6 +836,12 @@ public class DreamScene extends Scene {
         });
     }
 
+    /**
+     * @param filepath
+     * @param root
+     * @param scene
+     * @throws IOException
+     */
     public void textTool(String filepath, Group root, Scene scene) throws IOException {
 
         ArrayList<String> speakerCache = new ArrayList<String>();

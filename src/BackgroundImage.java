@@ -34,6 +34,9 @@ public class BackgroundImage extends ImageView {
         }
     }
 
+    /**
+     * @param g
+     */
     public void initializeGridOverlay(Group g) {
         for (int row = 0; row < player.cellMap.length; row++) {
             for (int col = 0; col < player.cellMap[0].length; col++) {

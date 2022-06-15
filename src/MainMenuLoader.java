@@ -17,6 +17,10 @@ public class MainMenuLoader {
     boolean finished = false;
     boolean goToInstruct = false;
 
+    /**
+     * @return Scene
+     * @throws IOException
+     */
     public Scene load() throws IOException {
         Parent companyRoot = FXMLLoader.load(getClass().getResource("resources/mainMenu.fxml"));
         Scene companyScene = new Scene(companyRoot, 640, 640);
@@ -29,7 +33,7 @@ public class MainMenuLoader {
             finished = true;
         });
 
-        instructions.addEventHandler(MouseEvent.MOUSE_CLICKED, e ->{
+        instructions.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
             goToInstruct = true;
         });
 
