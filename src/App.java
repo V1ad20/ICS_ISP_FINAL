@@ -19,16 +19,14 @@ public class App extends Application {
     SplashscreenLoader splashscreenLoader;
     MainMenuLoader mainMenuLoader;
     InstructionsLoader instructionsLoader;
-    UsernameInputLoader usernameLoader;
 
     Scene splashscreen;
     Scene mainMenu;
     Scene instructionsMenu;
+    Scene leaderboardMenu;
     Scene usernameScene;
     Scene prevScene;
     Scene currentScene;
-
-    Timekeeper timekeeper;
 
     boolean canShowStage = false;
 
@@ -55,16 +53,15 @@ public class App extends Application {
         splashscreenLoader = new SplashscreenLoader();
         mainMenuLoader = new MainMenuLoader();
         instructionsLoader = new InstructionsLoader();
-        usernameLoader = new UsernameInputLoader();
+
         houseScene = new HouseScene();
         dreamScene = new DreamScene();
         subwayScene = new SubwayScene();
         trainScene = new TrainScene();
+
         splashscreen = splashscreenLoader.load();
         mainMenu = mainMenuLoader.load();
         instructionsMenu = instructionsLoader.load();
-        usernameScene = usernameLoader.load();
-        timekeeper = new Timekeeper();
 
         // splashscreenLoader.finished = true;
         // mainMenuLoader.finished = true;
@@ -97,12 +94,6 @@ public class App extends Application {
 
                 if (mainMenuLoader.finished) {
                     houseScene.started = true;
-                    currentScene = usernameScene;
-                }
-
-                if (usernameLoader.finished) {
-                    currentUsername = usernameLoader.passedUsername;
-                    timekeeper.start();
                     currentScene = houseScene;
                 }
 
